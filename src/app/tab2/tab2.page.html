@@ -1,17 +1,148 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Registrar Usuarios
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <!--form [formGroup]="directionForm" (ngSubmit)="pro(directionForm.value)">
+    <ion-item>
+      <ion-label position="floating">nombre *</ion-label>
+      <ion-input formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">apellido *</ion-label>
+      <ion-input formControlName="apellido"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">rut *</ion-label>
+      <ion-input formControlName="rut"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">telefono</ion-label>
+      <ion-input formControlName="telefono"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">celular *</ion-label>
+      <ion-input formControlName="celular"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">email *</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">universidad *</ion-label>
+      <ion-input formControlName="universidad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>sexo</ion-label>
+      <ion-select formControlName="sexo">
+        <ion-select-option value="masculino">masculino</ion-select-option>
+        <ion-select-option value="femenino">femenino</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <--carrera->
+    <ion-button expand="full" type="submit" [disabled]="directionForm.invalid">probar</ion-button>
+  </form-->
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <form (ngSubmit) = "registry( fRegistry )" #fRegistry = "ngForm">
+    <ion-row>
+      <ion-col> </ion-col>
+        <ion-col>
+            
+            <ion-list>
+                
+                <ion-item>
+                  <ion-label position="floating">Nombre *</ion-label>
+                  <ion-input name="nombre" type="text" style="text-transform: uppercase" [(ngModel)] = registerUser.name required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Apellido *</ion-label>
+                  <ion-input name="apellido" type="text" style="text-transform: uppercase" [(ngModel)] = registerUser.surnames required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Rut *</ion-label>
+                  <ion-input name="rut" type="text" style="text-transform: uppercase" [(ngModel)] = registerUser.run required></ion-input>
+                </ion-item>
+            
+                <ion-item>
+                  <ion-label position="floating">Celular *</ion-label>
+                  <ion-input name="celular" type="text" [(ngModel)] = registerUser.celphone required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Email *</ion-label>
+                  <ion-input name="email" type="email" style="text-transform: uppercase" [(ngModel)] = registerUser.email required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Sexo</ion-label>
+                  <ion-select name="sexor" type="text" [(ngModel)] = registerUser.gender required>
+                    <ion-select-option value="M">Masculino</ion-select-option>
+                    <ion-select-option value="F">Femenino</ion-select-option>
+                  </ion-select>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Constraseña *</ion-label>
+                <ion-input name="password" type="password" [(ngModel)] = registerUser.password required></ion-input>
+                </ion-item>
+
+            </ion-list>
+            
+        </ion-col>
+      <ion-col> </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col> </ion-col>
+      <ion-col>
+          <ion-button type="submit"
+                      color="tertiary"
+                      shape="round"
+                      expand="full" >
+              Crear usuario
+          </ion-button>
+      </ion-col>
+      <ion-col> </ion-col>
+    </ion-row>
+  </form>
+  
+  <ion-footer text-center>
+    <ion-grid fixed>
+        
+      <ion-row>
+        <ion-col>
+        
+            <ion-button fill="clear" style="color: #fff;">Contacto</ion-button>
+            <br>
+            <ion-button fill="clear" style="color: #fff;">Home</ion-button>
+            <br>
+            <ion-button fill="clear" style="color: #fff;">Acerca de</ion-button>
+          
+        </ion-col>
+        <ion-col size="8" style="text-align: center !important;">
+              <p>Las universidades que integran el Consejo de Rectores son 30. Se trata de universidades 
+              estatales y públicas no estatales del país, cada una de ellas de amplia trayectoria y 
+              excelencia en Educación Superior, con presencia en todas las regiones de Chile.</p>
+              <ion-grid fixed>
+            
+                <ion-button >Ver</ion-button>
+            
+              </ion-grid>
+        </ion-col>
+        <ion-col>
+        
+            <img src="assets/img/consejo.jpg" style="height: 120px; width: 140px;">
+        
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+
+  </ion-footer>
+
+
 </ion-content>
+ 
+
